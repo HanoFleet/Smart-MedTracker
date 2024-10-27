@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>ZLTech</title>
+    <style type="text/css" media="screen">
+	  * {
+		margin: 0;
+		padding: 0;
+	  }
+	  html, body {
+		width: 100%;
+		height: 100%;
+		margin-top: 1%;
+		margin-bottom:1%;
+		background-color: white;
+	  }
+	  #out {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	  }
+	  #top {
+		display: inline-block;
+		height: 10%;
+		width: 100%;
+		margin-bottom: 1%;
+	  }
+	  #middle {
+		display: inline-block;
+		height: 60%;
+		width: 100%;
+	  }
+	  #bottom {
+		display: inline-block;
+		height: 8%;
+		width: 100%;
+		margin-top: 1%;
+	  }
+	  #top_left {
+		display: inline-block;
+		float: left;
+		width: 20%;
+		height: 100%;
+	  }
+	  #top_middle {
+		display: inline-block;
+		width: 58%;
+		height: 100%;
+	  }
+	  #top_right {
+		display: inline-block;
+		float: right;
+		width: 20%;
+		height: 100%;
+	  }
+	  #setting_form, #mode_change_form {
+		display: block;
+		width: 100%;
+		height: 100%;
+	  }
+	  #setting {
+		display: inline-block;
+		width: 80%;
+		height: 70%;
+		margin-top: 6%;
+		outline: none;
+		cursor: pointer;
+		text-align:center;
+		font:16px/100% 'Microsoft yahei',Arial,Helvetica,sans-serif;
+		padding: .5em 2em .55em;
+		text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		-webkit-border-shadow: 2em;
+		-moz-border-radius: 2em;
+		border-radius: 2em;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		color: #e8f0de;
+		border: solid 1px #538312;
+		background: #64991e;
+		background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e));
+		background: -moz-linear-gradient(top, #7db72f, #4e7d0e);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db72f', endColorstr='#4e7d0e');
+	  }
+	  #title {
+		display: inline-block;
+		width: 100%;
+		height: 70%;
+	  }
+	  #webpage_func_mode {
+		display: inline-block;
+		width: 80%;
+		height: 70%;
+		margin-top: 6%;
+		cursor: pointer;
+		text-align:center;
+		font-size: larger;
+	  } 
+	  #middle_left {
+		display: inline-block;
+		float:left;
+		width: 20%;
+		height: 100%;
+	  }
+	  #middle_middle {
+		display: inline-block;
+		width: 58%;
+		height: 100%;
+	  }
+	  #middle_right {
+		display: inline-block;
+		width: 20%;
+		height: 100%;
+		float:right;
+	  }
+	  #middle_left_row_1,#middle_right_row_1 {
+		width: 100%;
+		height: 50%;
+	  }
+	  #middle_left_row_2,#middle_right_row_2 {
+		width: 100%;
+		height: 50%;
+	  }
+	  #middle_left_row_1_row_1,#middle_left_row_1_row_2,#middle_left_row_1_row_3 {
+		margin:0 auto;
+		width: 80%;
+		height: 25%;
+		margin-top: 5%;
+	  }
+	  #middle_right_row_1_row_1,#middle_right_row_1_row_2,#middle_right_row_1_row_3 {
+		margin:0 auto;
+		width: 80%;
+		height: 25%;
+		margin-top: 5%;
+	  }
+	  #l1_form,#l2_form,#l3_form,#r1_form,#r2_form,#r3_form {
+		display: block;
+		width: 100%;
+		height: 100%;
+	  }
+	  #l1,#l2,#l3,#r1,#r2,#r3 {
+		display: block;
+		width: 100%;
+		height: 100%;
+		outline: none;
+		cursor: pointer;
+		text-align:center;
+		font:16px/100% 'Microsoft yahei',Arial,Helvetica,sans-serif;
+		text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		-webkit-border-shadow: 2em;
+		-moz-border-radius: 2em;
+		border-radius: 2em;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		color: #d9eef7;
+		border: solid 1px #0076a3;
+		background: #0095cd;
+		background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+		background: -moz-linear-gradient(top, #00adee, #0078a5);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+	  }
+	  #lu,#ld,#ru,#rd {
+		margin:0 auto;
+		width: 26%;
+		height: 30%;
+	  }
+	  #ll_lr,#rl_rr {
+		margin:0 auto;
+		width: 80%;
+		height: 30%;
+		margin-top: 2%;
+		margin-bottom: 2%;
+	  }
+	  #ll,#rl {
+		display: inline-block;
+		width: 30%;
+		height: 100%;
+		margin-left: 1%;
+	  }
+	  #lst,#rst {
+		display: inline-block;
+		width: 30%;
+		height: 100%;
+	  }
+	  #lr,#rr {
+		display: inline-block;
+		width: 30%;
+		height: 100%;
+		margin-left: 1%;
+	  }
+	  #lu_form,#ld_form,#ll_form,#lr_form,#lst_form  {
+		display: block;
+		width: 100%;
+		height: 100%;
+	  }
+	  #ru_form,#rd_form,#rl_form,#rr_form,#rst_form  {
+		display: block;
+		width: 100%;
+		height: 100%;
+	  }
+	  #lu_input,#ld_input,#ll_input,#lr_input,#lst_input  {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		outline: none;
+		cursor: pointer;
+		text-align:center;
+		font:11px/100% 'Microsoft yahei',Arial,Helvetica,sans-serif;
+		text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		-webkit-border-shadow: .5em;
+		-moz-border-radius: .5em;
+		border-radius: .5em;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		color: #fef4e9;
+		border: solid 1px #da7c0c;
+		background: #f78d1d;
+		background: -webkit-gradient(linear, left top, left bottom, from(#faa5ea), to(#f47a20));
+		background: -moz-linear-gradient(top, #faa5ea, #f47a20);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa5ea', endColorstr='#f47a20');
+	  }
+	  #ru_input,#rd_input,#rl_input,#rr_input,#rst_input  {
+		display: block;
+		width: 100%;
+		height: 100%;
+		outline: none;
+		cursor: pointer;
+		text-align:center;
+		font:11px/100% 'Microsoft yahei',Arial,Helvetica,sans-serif;
+		text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		-webkit-border-shadow: .5em;
+		-moz-border-radius: .5em;
+		border-radius: .5em;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		color: #d9eef7;
+		border: solid 1px #0076a3;
+		background: #0095cd;
+		background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+		background: -moz-linear-gradient(top, #00adee, #0078a5);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+	  }
+	  #bottom_left {
+		display: inline-block;
+		font-size: larger;
+		width: 20%;
+		height: 100%;
+		padding-top: 1%;
+	  }
+	  #send_cmd_form {
+		display: inline-block;
+		width: 79%;
+		height: 100%;
+	  }
+	  #bottom_middle {
+		display: inline-block;
+		float: left;
+		width: 73%;
+		height: 100%;
+		margin-left: 2px;
+	  }
+	  #bottom_right {
+		display: inline-block;
+		width: 20%;
+		height: 100%;
+		margin-left: 3%;
+	  }
+	  #self_cmd_text {
+		display: inline-block;
+		width: 100%;
+		height: 75%;
+		font-size: larger;
+	  }
+	  #send_cmd {
+		display: inline-block;
+		width: 100%;
+		height: 80%;
+		outline: none;
+		cursor: pointer;
+		text-align:center;
+		font:16px/100% 'Microsoft yahei',Arial,Helvetica,sans-serif;
+		text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		-webkit-border-shadow: .5em;
+		-moz-border-radius: .5em;
+		border-radius: .5em;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		color: #d9eef7;
+		border: solid 1px #0076a3;
+		background: #0000FF;
+		background: -webkit-gradient(linear, left top, left bottom, from(#3300FF), to(#6600FF));
+		background: -moz-linear-gradient(top, #3300FF, #6600FF);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3300FF', endColorstr='#6600FF');
+	  }
+	  img {
+		display: block;
+		height: 100%;
+		width: 100%;
+		-webkit-user-select: none;
+		margin: auto;
+		background-color:hsl(0,0%,25%);
+	  }
+    </style>
+    <script>
+	function form_submit() {
+		var mode_form = document.getElementById("mode_change_form");
+		mode_form.submit();
+	}
+    </script>
+  </head>
+  <body>
+	<div id='out'>
+		<div id='top'>
+			<div id='top_left'>
+				<form action="" method="post" id='setting_form'>
+					<input id='setting' type="submit" name='setting' value="{{ response_dict.setting }}">
+				</form>
+			</div>
+			<div id='top_middle'>
+				<h1 id='title' name='title'>{{ response_dict.title }}</h1>
+			</div>
+			<div id='top_right'>
+				<form action="" method="post" id='mode_change_form'>
+					<select name="webpage_func_mode" id="webpage_func_mode" onchange="form_submit();">
+						<option value="{{ response_dict.mode1 }}">{{ response_dict.mode1 }}</option>
+						<option value="{{ response_dict.mode2 }}">{{ response_dict.mode2 }}</option>
+					</select>
+				</form>
+			</div>
+		</div>
+		<div id='middle'>
+			<div id='middle_left'>
+				<div id='middle_left_row_1'>
+					<div id='middle_left_row_1_row_1'>
+						<form action="" method="post" id='l1_form'>
+							<input id='l1' type="submit" name='l1' value="{{ response_dict.l1 }}">
+						</form>
+					</div>
+					<div id='middle_left_row_1_row_2'>
+						<form action="" method="post" id='l2_form'>
+							<input id='l2' type="submit" name='l2' value="{{ response_dict.l2 }}">
+						</form>
+					</div>
+					<div id='middle_left_row_1_row_3'>
+						<form action="" method="post" id='l3_form'>
+							<input id='l3' type="submit" name='l3' value="{{ response_dict.l3 }}">
+						</form>
+					</div>
+				</div>
+				<div id='middle_left_row_2'>
+					<div id='lu'>
+						<form action="" method="post" id='lu_form'>
+							<input id='lu_input' name='lu' value="{{ response_dict.lu }}" type="submit">
+						</form>
+					</div>
+					<div id='ll_lr'>
+						<div id='ll'>
+							<form action="" method="post" id='ll_form'>
+								<input id='ll_input' name='ll' value="{{ response_dict.ll }}" type="submit">
+							</form>
+						</div>
+						<div id='lst'>
+							<form action="" method="post" id='lst_form'>
+								<input id='lst_input' name='lst' value="{{ response_dict.lst }}" type="submit">
+							</form>
+						</div>
+						<div id='lr'>
+							<form action="" method="post" id='lr_form'>
+								<input id='lr_input' name='lr' value="{{ response_dict.lr }}" type="submit">
+							</form>
+						</div>
+					</div>
+					<div id='ld'>
+						<form action="" method="post" id='ld_form'>
+							<input id='ld_input' name='ld' value="{{ response_dict.ld }}" type="submit">
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id='middle_middle'>
+				<img src='http://192.168.12.1:8080/?action=stream'>
+			</div>
+			<div id='middle_right'>
+				<div id='middle_right_row_1'>
+					<div id='middle_right_row_1_row_1'>
+						<form action="" method="post" id='r1_form'>
+							<input id='r1' type="submit" name='r1' value="{{ response_dict.r1 }}">
+						</form>
+					</div>
+					<div id='middle_right_row_1_row_2'>
+						<form action="" method="post" id='r2_form'>
+							<input id='r2' type="submit" name='r2' value="{{ response_dict.r2 }}">
+						</form>
+					</div>
+					<div id='middle_right_row_1_row_3'>
+						<form action="" method="post" id='r3_form'>
+							<input id='r3' type="submit" name='r3' value="{{ response_dict.r3 }}">
+						</form>
+					</div>
+				</div>
+				<div id='middle_right_row_2'>
+					<div id='ru'>
+						<form action="" method="post" id='ru_form'>
+							<input id='ru_input' name='ru' value="{{ response_dict.ru }}" type="submit">
+						</form>
+					</div>
+					<div id='rl_rr'>
+						<div id='rl'>
+							<form action="" method="post" id='rl_form'>
+								<input id='rl_input' name='rl' value="{{ response_dict.rl }}" type="submit">
+							</form>
+						</div>
+						<div id='rst'>
+							<form action="" method="post" id='rst_form'>
+								<input id='rst_input' name='rst' value="{{ response_dict.rst }}" type="submit">
+							</form>
+						</div>
+						<div id='rr'>
+							<form action="" method="post" id='rr_form'>
+								<input id='rr_input' name='rr' value="{{ response_dict.rr }}" type="submit">
+							</form>
+						</div>
+					</div>
+					<div id='rd'>
+						<form action="" method="post" id='rd_form'>
+							<input id='rd_input' name='rd' value="{{ response_dict.rd }}" type="submit">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id='bottom'>
+			<div id='bottom_left'>自&ensp;定&ensp;义&ensp;指&ensp;令&ensp;&ensp;:</div>
+			<form action="" method="post" id='send_cmd_form'>
+				<div id='bottom_middle'>
+					<input id='self_cmd_text' type="text" name='self_cmd_text' placeholder="请输入要发送的指令">
+				</div>
+				<div id='bottom_right'>
+					<input id='send_cmd' type="submit" value="发送">
+				</div>
+			</form>
+		</div>
+	</div>
+  </body>
+</html>
